@@ -1,0 +1,32 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+      "cpus": 2
+    },
+    "waitFor": "onCreateCommand",
+    "updateContentCommand": "npm install && npm run build",
+    "postCreateCommand": "",
+    "postAttachCommand": {
+      "server": "npm run dev"
+    },
+    "customizations": {
+      "codespaces": {
+        "openFiles": ["app/page.tsx"]
+	},
+	"vscode": {
+		"extensions": [
+			"dsznajder.es7-react-js-snippets",
+			"moalamri.inline-fold",
+			"bradlc.vscode-tailwindcss"
+		]
+	}
+    },
+    "portsAttributes": {
+      "3000": {
+        "label": "Application",
+        "onAutoForward": "openPreview"
+      }
+    },
+    "forwardPorts": [3000]
+  }
+  
